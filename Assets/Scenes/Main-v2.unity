@@ -1652,6 +1652,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 66235291}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &66235293 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: aeac8180e9fa3a74f8529cc1418e3454,
+    type: 3}
+  m_PrefabInstance: {fileID: 66235291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &66235294
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 66235293}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.008000006, y: 0.0100000035, z: 0.020000007}
+  m_Center: {x: 0.00000004493659, y: 0.000000029901425, z: -0.003335066}
 --- !u!1001 &67672603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3739,8 +3758,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.020000007, y: 0.03639815, z: 0.020000005}
-  m_Center: {x: -0.00000005957235, y: -0.0050388267, z: -0.000000015144684}
+  m_Size: {x: 0.020000007, y: 0.052010488, z: 0.020000005}
+  m_Center: {x: -0.00000005953897, y: -0.010246974, z: -0.000000015116358}
 --- !u!1001 &296772920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10592,9 +10611,9 @@ ReflectionProbe:
   m_Mode: 0
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
-  m_Resolution: 128
+  m_Resolution: 256
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 13.35, y: 10, z: 15}
+  m_BoxSize: {x: 15.08, y: 10, z: 15}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.3
   m_FarClip: 1000
@@ -29788,6 +29807,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 788582bde81111643a524868eabfdceb, type: 3}
+--- !u!1 &2051189830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 788582bde81111643a524868eabfdceb,
+    type: 3}
+  m_PrefabInstance: {fileID: 2051189829}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2051189831
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051189830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020000005, y: 0.026949761, z: 0.020000007}
+  m_Center: {x: -0.000000044885972, y: -0.0034734067, z: -0.000000010818292}
 --- !u!1001 &2072321783
 PrefabInstance:
   m_ObjectHideFlags: 0
