@@ -43,7 +43,7 @@ BoxCollider:
   m_GameObject: {fileID: 4301299392839665767}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.34325027, y: 1, z: 2.1831017}
   m_Center: {x: -8.084776, y: 0, z: -8.1099205}
@@ -122,7 +122,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9bcf23ea9e4c35f41a597f1358bc5cc1,
         type: 3}
       propertyPath: m_LightProbeUsage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 9bcf23ea9e4c35f41a597f1358bc5cc1,
         type: 3}
@@ -207,12 +207,12 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 18dc8e80d2349624d81720e1bd267d9c,
         type: 3}
       propertyPath: m_LightProbeUsage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 18dc8e80d2349624d81720e1bd267d9c,
         type: 3}
       propertyPath: m_ReflectionProbeUsage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 18dc8e80d2349624d81720e1bd267d9c,
         type: 3}
@@ -307,7 +307,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 9bcf23ea9e4c35f41a597f1358bc5cc1,
         type: 3}
       propertyPath: m_LightProbeUsage
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9bcf23ea9e4c35f41a597f1358bc5cc1,
         type: 3}
