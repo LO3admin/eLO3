@@ -1,7 +1,42 @@
 fileFormatVersion: 2
 guid: c221623219a0af64ebba0647d3db1564
 SpeedTreeImporter:
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Billboard
+    second: {fileID: 2100000, guid: 402d9e1d7f2f1534d8cb5cfd9d54fe1c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches_0_LOD0
+    second: {fileID: 2100000, guid: e238563e37feed149a842182ba220d00, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches_0_LOD1
+    second: {fileID: 2100000, guid: 745eb23265d61c24aadd4a14ae2e3b68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Branches_0_LOD2
+    second: {fileID: 2100000, guid: 929a73d4b37b9944280eccbd527ee4d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_1_LOD0
+    second: {fileID: 2100000, guid: 5f2fed2a4d9866f49be9887d4e14510e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_1_LOD1
+    second: {fileID: 2100000, guid: f587094848e5d984b857979970034dc1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Leaves_1_LOD2
+    second: {fileID: 2100000, guid: 39dd79f52a8803c4dbc6ff604663d56d, type: 2}
   serializedVersion: 6
   mainColor: {r: 1, g: 1, b: 1, a: 1}
   hueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
@@ -11,13 +46,13 @@ SpeedTreeImporter:
   lODSettings:
   - height: 0.5
     castShadows: 1
-    receiveShadows: 1
+    receiveShadows: 0
     useLightProbes: 1
     reflectionProbeUsage: 1
     enableBump: 1
     enableHue: 1
     enableSubsurface: 1
-    windQuality: 4
+    windQuality: 2
   - height: 0.25
     castShadows: 1
     receiveShadows: 1
