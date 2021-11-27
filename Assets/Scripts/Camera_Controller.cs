@@ -1,6 +1,6 @@
 using UnityEngine;
  
-public class Player_Movement : MonoBehaviour
+public class Camera_Controller : MonoBehaviour
 {
     public float sensitivity;
     private float xRotation = 0.0f;
