@@ -202,6 +202,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 8784494642817658995}
   interactable: 1
+  interactSound: {fileID: 8300000, guid: 5c59eb4bae16f7b468a97a7aedb853e9, type: 3}
+  soundOnInteraction: 1
   angle: {x: 0, y: 0, z: -90}
   rotationSpeed: 10
   target: {fileID: 8996844379214067528}

@@ -111,7 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2317454203681905352}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0.0003224367, y: 0.018299999, z: 0.0017499998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -119,7 +119,7 @@ Transform:
   - {fileID: 3048008983051402253}
   m_Father: {fileID: 4796791966390488689}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!33 &2797438463121449218
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -204,7 +204,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   interactable: 1
-  angle: {x: 0, y: 0, z: 90}
+  interactSound: {fileID: 8300000, guid: 04622c4b2d220434fbd8ca3e037a1f42, type: 3}
+  soundOnInteraction: 1
+  angle: {x: 0, y: 0, z: -90}
   rotationSpeed: 10
   target: {fileID: 0}
 --- !u!65 &149426628
@@ -522,6 +524,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
   interactable: 1
+  interactSound: {fileID: 8300000, guid: 04622c4b2d220434fbd8ca3e037a1f42, type: 3}
+  soundOnInteraction: 1
   angle: {x: 0, y: 0, z: -90}
   rotationSpeed: 10
   target: {fileID: 0}

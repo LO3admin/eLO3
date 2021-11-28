@@ -37,7 +37,7 @@ public class PlayerInteract : MonoBehaviour
                 }
             }
         } 
-        if(hitObj && !lookingAtInteractable) { hitObj.GetComponent<Interactable>().EndLooking();  hitObj = null; }
+        if(hitObj && !lookingAtInteractable) { hitObj.GetComponent<Interactable>().StoppedLooking();  hitObj = null; }
 
         interactText.SetActive(lookingAtInteractable);
     }

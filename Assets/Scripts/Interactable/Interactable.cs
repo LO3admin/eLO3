@@ -13,27 +13,25 @@ public abstract class Interactable : MonoBehaviour
     // Every item with Interactable also needs a collider with a tag "Interactable"
     protected virtual void Interact() { }
 
-    public void BaseInteract() { if (interactable) Interact(); }
-    public void LookingAt()
-    {
-        if (interactable) outline.OutlineWidth = 10;
-    } 
-
-    public void EndLooking()
-    {
-        if(interactable) outline.OutlineWidth = 0;
+    public void BaseInteract() 
+    { 
+        if (interactable) Interact(); 
+        if (soundOnInteraction) AudioManager.instance.interactionsSource.PlayOneShot(interactSound); 
     }
+    public void LookingAt() { if (interactable) outline.OutlineWidth = 10; }
+    public void StoppedLooking() { if(interactable) outline.OutlineWidth = 0; }
 
     [HideInInspector]
     public Outline outline;
 
     public bool interactable=true;
+    public AudioClip interactSound;
+    public bool soundOnInteraction = true;
 
     void Awake()
     {
         outline = GetComponent<Outline>();
         outline.OutlineWidth = 0;
-        //outline.OutlineMode = Outline.Mode.OutlineVisible;
     }
 
 }
