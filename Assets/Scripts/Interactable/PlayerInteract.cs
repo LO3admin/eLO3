@@ -7,74 +7,39 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private Camera _playerCamera = default;
 
-    [SerializeField]
-    private GameObject _interactPrompt = default;
-
     [Header("Options")]
     [SerializeField]
     private float _interactDistance = default;
 
     [SerializeField]
-    [Tooltip("Interact cooldown in seconds")]
-    private float _interactCooldown = default;
+    private GameObject interactText;
 
-    private float _nextInteractTime = 0;
-
+    bool lookingAtInteractable = false; 
+    GameObject hitObj;
     void Update() {
-        if (Input.GetButtonDown("Use")) {
-            OnInteract();
-        } else {
-            // Check if an interactable is in front of the player
-            Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward * _interactDistance);
+        lookingAtInteractable = false; // mogę raycastować na pare obiektów naraz więc sprawdzam czy jeden z nich był interactable
+        RaycastHit hitInfo = new RaycastHit();
+        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, _interactDistance);
+        if (hit)
+        {
+            GameObject hitObject = hitInfo.transform.gameObject;
+            if (hitObject.transform.tag == "Interactable") {
+                Interactable i = hitObject.GetComponent<Interactable>();
 
-            RaycastHit hit;
+                i.LookingAt();
 
-            if (Physics.Raycast(ray, out hit, _interactDistance))
-            {
-                if (hit.collider.tag == "Interactable")
+                hitObj = hitObject;
+                lookingAtInteractable = true;
+
+                if (Input.GetButtonDown("Use"))
                 {
-                    ShowPrompt();
-                } else
-                {
-                    HidePrompt();
+                    i.BaseInteract();
                 }
-            } else
-            {
-                HidePrompt();
             }
-        }
+        } 
+        if(hitObj && !lookingAtInteractable) { hitObj.GetComponent<Interactable>().EndLooking();  hitObj = null; }
+
+        interactText.SetActive(lookingAtInteractable);
     }
 
-    private void OnInteract() {
-        if (Time.time < _nextInteractTime)
-        {
-            return;
-        }
-        _nextInteractTime = Time.time + _interactCooldown;
-
-        Ray ray = new Ray(_playerCamera.transform.position, _playerCamera.transform.forward * _interactDistance);
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, _interactDistance))
-        {
-            if (hit.collider.tag == "Interactable")
-            {
-                Interactable interactable = hit.collider.gameObject.GetComponent<Interactable>();
-
-                interactable?.Interact(gameObject);
-            }
-        }
-    }
-
-    // TODO: Do this with an animator or a tweening library
-    private void ShowPrompt()
-    {
-        _interactPrompt.SetActive(true);
-    }
-
-    private void HidePrompt()
-    {
-        _interactPrompt.SetActive(false);
-    }
 }

@@ -2,39 +2,49 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DoorInteractable : Interactable
 {
-    public GameObject rotatingElement;
 
-    public float angle = 90;
-    public float rotationSpeed = 0.3f;
+    public Vector3 angle = new Vector3(0,0,90);
+    public float rotationSpeed = 10f;
 
-    private Quaternion desiredAngle;
+    public GameObject target;
+
     private Quaternion startingAngle;
-
-    private Quaternion quaternionAngle;
-
-
+    private Quaternion desiredAngle;
     private bool open = false;
 
     void Start() {
-        desiredAngle = rotatingElement.transform.rotation;
-        startingAngle = rotatingElement.transform.rotation;
-        quaternionAngle = startingAngle * Quaternion.Euler(Vector3.forward * angle);
+        if (!target) target = gameObject;
+        startingAngle = target.transform.rotation;
+        desiredAngle = startingAngle * Quaternion.Euler(angle);
+
+        Debug.Log("s: " + startingAngle + " d: " + desiredAngle);
     }
 
-    void Update() {
-        rotatingElement.transform.rotation = Quaternion.Slerp(rotatingElement.transform.rotation, desiredAngle, rotationSpeed);
-    }
-
-    public override void Interact()
+    protected override void Interact()
     {
+
+        Debug.Log("from: "+target.transform.rotation + " to: "+(open ? startingAngle : desiredAngle));
+
+        StopCoroutine("Rot");
+        StartCoroutine("Rot", open ? startingAngle : desiredAngle);
+
         open = !open;
-        // desiredAngle = startingAngle;
-        if (open) {
-            desiredAngle = quaternionAngle;
-        } else {
-            desiredAngle = startingAngle;
+    }
+
+    public IEnumerator Rot(Quaternion dAng)
+    {
+        while (Quaternion.Angle(transform.rotation, dAng) > 2.0f)
+        {
+            //target.transform.eulerAngles =  Vector3.Lerp(target.transform.eulerAngles, dAng, rotationSpeed*Time.deltaTime);
+            target.transform.rotation = Quaternion.Slerp(target.transform.rotation, dAng, rotationSpeed * Time.deltaTime);
+
+            yield return null;
         }
+
+        outline.OutlineWidth = 0;
+        yield return null;
     }
 }
