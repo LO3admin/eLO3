@@ -51,7 +51,7 @@ CharacterController:
   m_Height: 1.2
   m_Radius: 0.36
   m_SlopeLimit: 45
-  m_StepOffset: 0.5
+  m_StepOffset: 0.2
   m_SkinWidth: 0.0001
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerCamera: {fileID: 7584330270073710206}
-  _interactDistance: 5
+  _interactDistance: 3
   interactText: {fileID: 0}
 --- !u!114 &5448584
 MonoBehaviour:
@@ -104,7 +104,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01c5fc5f0e5391f4ea46af93817154ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionsSource: {fileID: 0}
   playerSource: {fileID: 886148792354578173}
 --- !u!82 &886148792354578173
 AudioSource:
