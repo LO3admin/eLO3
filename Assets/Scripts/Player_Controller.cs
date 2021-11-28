@@ -30,7 +30,7 @@ public class Player_Controller : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        Vector3 move = (transform.right * horizontal + transform.forward * vertical) * (running ? RunningSpeed : MovementSpeed);
+        Vector3 move = (transform.right * horizontal + transform.forward * vertical).normalized * (running ? RunningSpeed : MovementSpeed);
 
         if (Input.GetKey(KeyCode.BackQuote)) { move *= 4f; }
 

@@ -70,7 +70,7 @@ MonoBehaviour:
   MovementSpeed: 5
   RunningSpeed: 7
   run: 304
-  Gravity: 15
+  Gravity: 25
   footstepSound: {fileID: 8300000, guid: 8b98d4c40ccb3ff4095a9f5edd0b48cf, type: 3}
   runningSound: {fileID: 8300000, guid: 9d71366540b33824c810b5917a788f8d, type: 3}
   volMin: 0.8
