@@ -33,7 +33,7 @@ public abstract class Interactable : MonoBehaviour
         if (interactable) Interact();
         if (soundOnInteraction)
         {
-            if(!source) source = AudioManager.instance.interactionsSource;
+            if(!source) source = gameObject.AddComponent<AudioSource>();
 
             source.Stop();
             source.clip = interactSound;

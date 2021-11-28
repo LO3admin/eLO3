@@ -10,6 +10,5 @@ public class AudioManager : MonoBehaviour
         instance = this;
     }
 
-    public AudioSource interactionsSource;
     public AudioSource playerSource;
 }
