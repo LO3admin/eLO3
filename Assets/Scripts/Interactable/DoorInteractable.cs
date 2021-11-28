@@ -44,6 +44,8 @@ public class DoorInteractable : Interactable
             yield return null;
         }
 
+        target.transform.rotation = dAng;
+
         outline.OutlineWidth = 0;
         yield return null;
     }
