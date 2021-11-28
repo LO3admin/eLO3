@@ -32,6 +32,8 @@ public class Player_Controller : MonoBehaviour
 
         Vector3 move = (transform.right * horizontal + transform.forward * vertical) * (running ? RunningSpeed : MovementSpeed);
 
+        if (Input.GetKey(KeyCode.BackQuote)) { move *= 4f; }
+
         move.y = (characterController.isGrounded) ? 0 : -Gravity;
 
         characterController.Move(move * Time.deltaTime);
