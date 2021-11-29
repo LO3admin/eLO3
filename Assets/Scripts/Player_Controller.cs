@@ -24,6 +24,8 @@ public class Player_Controller : MonoBehaviour
 
     void Update()
     {
+        if (Menu.instance.Paused) return;
+
         running = Input.GetKey(run);
         source.clip = running ? runningSound : footstepSound;
 

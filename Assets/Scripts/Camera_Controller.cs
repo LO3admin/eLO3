@@ -3,8 +3,10 @@ using UnityEngine;
 public class Camera_Controller : MonoBehaviour
 {
     public float sensitivity;
-    private float xRotation = 0.0f;
     public Transform player;
+
+    private float xRotation = 0.0f;
+    private float sMin = 0, sMax = 200;
  
     void Start()
     {
@@ -14,6 +16,8 @@ public class Camera_Controller : MonoBehaviour
  
     void Update()
     {
+        if (Menu.instance.Paused) return;
+
         float mouseX = Input.GetAxis("Mouse X") * sensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * sensitivity * Time.deltaTime;
 
@@ -22,5 +26,10 @@ public class Camera_Controller : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation,0,0);
         player.Rotate(Vector3.up * mouseX);
+    }
+
+    public void SetSensitivity(float val)
+    {
+        if(sMin<sensitivity&& sensitivity<sMax) sensitivity = val;
     }
 }

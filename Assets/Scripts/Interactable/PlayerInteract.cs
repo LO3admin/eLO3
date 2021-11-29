@@ -17,6 +17,8 @@ public class PlayerInteract : MonoBehaviour
     bool lookingAtInteractable = false; 
     GameObject hitObj;
     void Update() {
+        if (Menu.instance.Paused) return;
+
         lookingAtInteractable = false; // mogę raycastować na pare obiektów naraz więc sprawdzam czy jeden z nich był interactable
         RaycastHit hitInfo = new RaycastHit();
         bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, _interactDistance);
