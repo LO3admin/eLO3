@@ -14,34 +14,32 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private GameObject interactText;
 
-    bool lookingAtInteractable = false; 
-    GameObject hitObj;
+    Interactable activeObject;
     void Update() {
         if (Menu.instance.Paused) return;
 
-        lookingAtInteractable = false; // mogę raycastować na pare obiektów naraz więc sprawdzam czy jeden z nich był interactable
-        RaycastHit hitInfo = new RaycastHit();
-        bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, _interactDistance);
-        if (hit)
+        var hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hitInfo, _interactDistance);
+        if (hit && hitInfo.transform.CompareTag("Interactable"))
         {
-            GameObject hitObject = hitInfo.transform.gameObject;
-            if (hitObject.transform.tag == "Interactable") {
-                Interactable i = hitObject.GetComponent<Interactable>();
-
-                i.LookingAt();
-
-                hitObj = hitObject;
-                lookingAtInteractable = true;
-
-                if (Input.GetButtonDown("Use"))
-                {
-                    i.BaseInteract();
-                }
+            var hitObject = hitInfo.transform.gameObject.GetComponent<Interactable>();
+            if (hitObject != activeObject)
+            {
+                activeObject?.StoppedLooking();
+                hitObject.LookingAt();
+                activeObject = hitObject;
             }
-        } 
-        if(hitObj && !lookingAtInteractable) { hitObj.GetComponent<Interactable>().StoppedLooking();  hitObj = null; }
 
-        interactText.SetActive(lookingAtInteractable);
+            if (Input.GetButtonDown("Use"))
+            {
+                activeObject.BaseInteract();
+            }
+        }
+        else if (activeObject) 
+        {
+            activeObject.StoppedLooking();
+            activeObject = null;
+        }
+
+        interactText.SetActive(activeObject);
     }
-
 }

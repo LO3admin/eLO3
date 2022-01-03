@@ -42,6 +42,5 @@ public class MoveInteractable : Interactable
         transform.localPosition = dest;
 
         outline.OutlineWidth = 0;
-        yield return null;
     }
 }

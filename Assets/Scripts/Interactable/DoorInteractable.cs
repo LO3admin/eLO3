@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class DoorInteractable : Interactable
 {
-
     public Vector3 angle = new Vector3(0,0,90);
     public float rotationSpeed = 10f;
 
@@ -47,6 +46,5 @@ public class DoorInteractable : Interactable
         target.transform.rotation = dAng;
 
         outline.OutlineWidth = 0;
-        yield return null;
     }
 }
