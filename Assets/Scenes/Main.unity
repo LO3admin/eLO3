@@ -24407,33 +24407,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
-        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.569145
+      value: -25.584019
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6256232
+      value: 1.6350011
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.103
+      value: -10.098998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c96676d4988aa7d498bd4a00181f51a4,
         type: 3}
@@ -24597,8 +24582,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0017025945, y: 0.008000002, z: 0.019400002}
-  m_Center: {x: 0.0004449369, y: 0.0038000005, z: -0.00019999983}
+  m_Size: {x: 0.0016358367, y: 0.008000002, z: 0.019400002}
+  m_Center: {x: 0.00041155858, y: 0.003800001, z: -0.00019999982}
 --- !u!1 &606807078
 GameObject:
   m_ObjectHideFlags: 0
@@ -38830,7 +38815,7 @@ PrefabInstance:
     - target: {fileID: 4593366851643710592, guid: 7cad0bc66403b3e478f1ac41a7e78b15,
         type: 3}
       propertyPath: angle.z
-      value: -160
+      value: -105
       objectReference: {fileID: 0}
     - target: {fileID: 4593366851643710592, guid: 7cad0bc66403b3e478f1ac41a7e78b15,
         type: 3}
@@ -66687,6 +66672,10 @@ PrefabInstance:
       propertyPath: interactText
       value: 
       objectReference: {fileID: 288487780}
+    - target: {fileID: 5448579, guid: ef2e2b9ad5faa194ca5c31a3cc15ff42, type: 3}
+      propertyPath: _interactableLayers.m_Bits
+      value: 257
+      objectReference: {fileID: 0}
     - target: {fileID: 7584330269448897731, guid: ef2e2b9ad5faa194ca5c31a3cc15ff42,
         type: 3}
       propertyPath: m_Name

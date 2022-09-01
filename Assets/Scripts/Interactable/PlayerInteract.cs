@@ -14,11 +14,14 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField]
     private GameObject interactText;
 
+    [SerializeField]
+    private LayerMask _interactableLayers;
+
     Interactable activeObject;
     void Update() {
         if (Menu.instance.Paused) return;
 
-        var hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hitInfo, _interactDistance);
+        var hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hitInfo, _interactDistance, _interactableLayers);
         if (hit && hitInfo.transform.CompareTag("Interactable"))
         {
             var hitObject = hitInfo.transform.gameObject.GetComponent<Interactable>();
